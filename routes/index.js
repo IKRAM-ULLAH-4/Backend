@@ -80,6 +80,6 @@ router.get("/", getSteps);
 router.get("/u", getAllUsers);
 
 // ---------- Stripe Checkout ----------
-router.post("/create-checkout-session", auth, getConfimation);
+router.post("/create-checkout-session", getConfimation);
 
 export default router;
