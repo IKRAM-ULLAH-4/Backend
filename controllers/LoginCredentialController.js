@@ -76,8 +76,8 @@ export const getLoginCredentials = async (req, res) => {
 
     res.cookie(COOKIE_NAME, token, {
       httpOnly: true,
-      secure: process.env.NODE_ENV === "production",
-      sameSite: "lax",
+      secure: true , 
+      sameSite: "none",
       maxAge: parseCookieMaxAge(JWT_EXPIRES_IN),
     });
 
@@ -95,8 +95,8 @@ export const logout = async (req, res) => {
   try {
     res.clearCookie(COOKIE_NAME, {
       httpOnly: true,
-      secure: process.env.NODE_ENV === "production",
-      sameSite: "lax",
+      secure: true,
+      sameSite: "none",
     });
     res.json({ message: "Logged out" });
   } catch (err) {
