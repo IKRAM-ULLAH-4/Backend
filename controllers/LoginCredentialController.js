@@ -44,8 +44,9 @@ export const createCredentials = async (req, res) => {
 
     res.cookie(COOKIE_NAME, token, {
       httpOnly: true,
-      secure: process.env.NODE_ENV === "production",
-      sameSite: "lax",
+
+      secure:true , 
+      sameSite: "none",
       maxAge: parseCookieMaxAge(JWT_EXPIRES_IN),
     });
 
